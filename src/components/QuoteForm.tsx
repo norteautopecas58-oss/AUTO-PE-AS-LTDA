@@ -115,10 +115,10 @@ export const QuoteForm: React.FC<QuoteFormProps> = ({
               <span>Busca Rápida de Motores</span>
             </div>
 
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight leading-snug sm:leading-tight text-balance max-w-xl mx-auto hyphens-none">
               Consulte a disponibilidade do seu motor
             </h2>
-            <p className="mt-2 text-sm sm:text-base text-slate-600 max-w-xl mx-auto">
+            <p className="mt-2 text-sm sm:text-base text-slate-600 max-w-xl mx-auto leading-relaxed text-balance">
               Digite o motor e o ano do veículo abaixo para consultar nossa equipe de especialistas diretamente no WhatsApp.
             </p>
 

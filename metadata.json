@@ -1,6 +1,8 @@
 {
   "name": "AUTO PEÇAS LTDA — Motores Automotivos",
-  "description": "Especialistas em motores automotivos completos, parciais e cabeçotes com Nota Fiscal e garantia. Consulte a disponibilidade do motor para o seu carro pelo WhatsApp.",
+  "description": "Motores novos e seminovos com garantia e nota. Motores novos com 1 ano de garantia e seminovos revisados com 6 meses de garantia. Consulte no WhatsApp.",
   "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
 }

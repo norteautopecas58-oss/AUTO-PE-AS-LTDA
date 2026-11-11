@@ -171,17 +171,21 @@ export const LegalPoliciesView: React.FC<LegalPoliciesViewProps> = ({
                   Para compras concretizadas exclusivamente fora do estabelecimento comercial (como pedidos negociados e enviados à distância via WhatsApp ou telefone), o consumidor tem o direito de desistir da compra no prazo de até <strong>7 (sete) dias corridos</strong>, contados a partir da data de recebimento da peça física.
                 </p>
                 <div className="p-3 bg-slate-50 rounded-lg border border-slate-200 text-xs sm:text-sm text-slate-700">
-                  <strong>Condições para o arrependimento:</strong> A peça deve ser devolvida em sua embalagem original, sem marcas de instalação, tentativa de adaptação, lubrificação ou violação dos lacres do fabricante, acompanhada da respectiva Nota Fiscal.
+                  <strong>Condições para o arrependimento:</strong> A peça deve ser devolvida sem marcas de violação ou tentativa de adaptação indevida, acompanhada da respectiva nota.
                 </div>
               </div>
 
               <div className="space-y-3">
-                <h4 className="text-base font-bold text-slate-900">2. Garantia Legal contra Defeitos de Fabricação (Artigo 26 do CDC)</h4>
+                <h4 className="text-base font-bold text-slate-900">2. Prazos e Condições de Garantia</h4>
                 <p>
-                  As autopeças comercializadas como produtos novos contam com a garantia legal de <strong>90 (noventa) dias</strong> para bens duráveis contra vícios e defeitos de fabricação, conforme previsto no Artigo 26, inciso II do Código de Defesa do Consumidor, contados da entrega efetiva.
+                  Emitimos garantia e nota para todos os motores comercializados:
                 </p>
-                <p>
-                  Determinados fabricantes oferecem garantias contratuais complementares estendidas (ex: 6 meses a 1 ano para amortecedores ou bombas d'água de marcas específicas), as quais constarão expressamente do certificado do fabricante na embalagem.
+                <ul className="list-disc list-inside space-y-1 text-slate-700 text-sm">
+                  <li><strong>Motores Novos:</strong> 1 (um) ano de garantia a contar da data de entrega.</li>
+                  <li><strong>Motores Seminovos Revisados:</strong> 6 (seis) meses de garantia a contar da data de entrega.</li>
+                </ul>
+                <p className="text-xs text-slate-600">
+                  A garantia cobre eventuais defeitos mecânicos internos em conformidade com o Código de Defesa do Consumidor e o termo de garantia emitido.
                 </p>
               </div>
 
@@ -248,7 +252,7 @@ export const LegalPoliciesView: React.FC<LegalPoliciesViewProps> = ({
               <div className="space-y-3">
                 <h4 className="text-base font-bold text-slate-900">4. Propriedade Intelectual</h4>
                 <p>
-                  Todas as marcas de veículos e fabricantes eventualmente citadas no site (ex: Volkswagen, Fiat, Bosch, etc.) pertencem a seus respectivos titulares e são mencionadas estritamente a título de indicação de compatibilidade técnica e destinação comercial, em conformidade com o Artigo 132 da Lei de Propriedade Industrial (Lei nº 9.279/1996).
+                  Eventuais menções ou descrições técnicas de veículos pertencem a seus respectivos titulares e são utilizadas estritamente a título de indicação de compatibilidade técnica e destinação comercial, em conformidade com o Artigo 132 da Lei de Propriedade Industrial (Lei nº 9.279/1996).
                 </p>
               </div>
             </div>

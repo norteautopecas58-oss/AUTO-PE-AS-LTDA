@@ -17,11 +17,11 @@ export const Footer: React.FC<FooterProps> = ({
   };
 
   return (
-    <footer className="bg-slate-950 text-slate-400 border-t border-slate-800 text-xs sm:text-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+    <footer className="bg-slate-950 text-slate-400 border-t border-slate-800 text-xs sm:text-sm w-full overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16 w-full">
         
         {/* Main Footer Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12 w-full">
           
           {/* Column 1 & 2: Brand & Corporate CNPJ Identification */}
           <div className="lg:col-span-2 space-y-4">
@@ -33,7 +33,7 @@ export const Footer: React.FC<FooterProps> = ({
             </div>
 
             <p className="text-xs text-slate-400 leading-relaxed pr-4">
-              Comércio especializado em motores automotivos novos, parciais e revisados para veículos nacionais e importados. Fornecimento com Nota Fiscal Eletrônica e garantia conforme a legislação vigente.
+              Comércio especializado em motores automotivos novos e seminovos revisados. Emitimos garantia e nota: 1 ano de garantia para motores novos e 6 meses para seminovos revisados.
             </p>
 
             {/* Corporate Identification Box with CNPJ */}
@@ -68,6 +68,14 @@ export const Footer: React.FC<FooterProps> = ({
                   className="hover:text-white transition-colors cursor-pointer text-left"
                 >
                   Motores Disponíveis
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => onScrollToSection('nossa-loja')}
+                  className="text-emerald-400 hover:text-emerald-300 font-semibold transition-colors cursor-pointer text-left"
+                >
+                  Fotos da Loja & Equipe
                 </button>
               </li>
               <li>
@@ -176,10 +184,10 @@ export const Footer: React.FC<FooterProps> = ({
 
         </div>
 
-        {/* Legal Disclaimer compliant with Google Ads and Consumer Law */}
+        {/* Legal Disclaimer */}
         <div className="pt-6 border-t border-slate-800 text-[11px] text-slate-400 leading-relaxed space-y-2">
           <p>
-            A <strong>{siteConfig.company.displayName}</strong> opera com o compromisso de máxima transparência comercial. Todos os motores comercializados acompanham Nota Fiscal Eletrônica com numeração específica e rastreabilidade cadastral em conformidade com as diretrizes do Detran e legislação brasileira. As imagens de motores exibidas no site têm finalidade ilustrativa e técnica para demonstração da configuração dos blocos e periféricos.
+            A <strong>{siteConfig.company.displayName}</strong> opera com o compromisso de máxima transparência comercial. Emitimos garantia e nota com numeração e rastreabilidade cadastral em conformidade com as normas vigentes. As fotos exibidas no site ilustram nosso estoque real de motores novos e seminovos inspecionados.
           </p>
         </div>
 

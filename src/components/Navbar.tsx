@@ -29,16 +29,16 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   return (
     <header className="sticky top-0 z-50 bg-slate-900 text-white border-b border-slate-800 shadow-md">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 flex items-center justify-between gap-8">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-18 flex items-center justify-between gap-2 sm:gap-8 w-full">
         
         {/* Zone 1: Clean Brand Name */}
         <button
           onClick={() => handleNavClick('topo')}
-          className="text-left group flex items-center gap-2 cursor-pointer focus:outline-none shrink-0"
+          className="text-left group flex items-center gap-1.5 sm:gap-2 cursor-pointer focus:outline-none shrink-0"
           title="Página Inicial"
         >
           <div className="flex flex-col">
-            <span className="text-xl sm:text-2xl font-extrabold tracking-tight text-white group-hover:text-blue-400 transition-colors whitespace-nowrap">
+            <span className="text-lg sm:text-2xl font-extrabold tracking-tight text-white group-hover:text-blue-400 transition-colors whitespace-nowrap">
               {siteConfig.company.displayName}
             </span>
             <span className="text-[10px] font-semibold uppercase tracking-wider text-red-500 -mt-1 hidden sm:block">
@@ -49,7 +49,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         </button>
 
         {/* Zone 2: Navigation Links */}
-        <nav className="hidden lg:flex items-center gap-7 text-sm font-medium text-slate-300">
+        <nav className="hidden lg:flex items-center gap-6 xl:gap-7 text-sm font-medium text-slate-300">
           <button
             onClick={() => handleNavClick('topo')}
             className="cursor-pointer whitespace-nowrap shrink-0 hover:text-white transition-colors py-1"
@@ -61,6 +61,12 @@ export const Navbar: React.FC<NavbarProps> = ({
             className="cursor-pointer whitespace-nowrap shrink-0 hover:text-white transition-colors py-1"
           >
             Motores Disponíveis
+          </button>
+          <button
+            onClick={() => handleNavClick('nossa-loja')}
+            className="cursor-pointer whitespace-nowrap shrink-0 hover:text-white transition-colors py-1 text-emerald-400 font-semibold"
+          >
+            Fotos da Loja & Equipe
           </button>
           <button
             onClick={() => handleNavClick('diferenca')}
@@ -83,7 +89,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         </nav>
 
         {/* Zone 3: Primary Action CTA */}
-        <div className="flex items-center gap-3 shrink-0">
+        <div className="flex items-center gap-2 sm:gap-3 shrink-0">
           <button
             onClick={onScrollToForm}
             className="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-bold text-white bg-red-600 hover:bg-red-500 rounded-lg shadow transition-colors cursor-pointer"
@@ -93,16 +99,17 @@ export const Navbar: React.FC<NavbarProps> = ({
 
           <button
             onClick={handleWhatsAppClick}
-            className="inline-flex items-center gap-2 px-4 py-2 text-xs sm:text-sm font-bold text-white bg-emerald-600 hover:bg-emerald-500 active:bg-emerald-700 rounded-lg shadow-sm transition-all whitespace-nowrap shrink-0 cursor-pointer"
+            className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 text-xs sm:text-sm font-bold text-white bg-emerald-600 hover:bg-emerald-500 active:bg-emerald-700 rounded-lg shadow-sm transition-all whitespace-nowrap shrink-0 cursor-pointer"
           >
             <MessageCircle className="w-4 h-4 shrink-0 fill-current" />
-            <span>Consulte no WhatsApp</span>
+            <span className="hidden sm:inline">Consulte no WhatsApp</span>
+            <span className="sm:hidden">WhatsApp</span>
           </button>
 
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 text-slate-300 hover:text-white focus:outline-none"
+            className="lg:hidden p-1.5 sm:p-2 text-slate-300 hover:text-white focus:outline-none"
             aria-label="Abrir menu"
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -125,6 +132,12 @@ export const Navbar: React.FC<NavbarProps> = ({
               className="text-left px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:bg-slate-800"
             >
               Motores Disponíveis
+            </button>
+            <button
+              onClick={() => handleNavClick('nossa-loja')}
+              className="text-left px-3 py-2 rounded-md text-base font-medium text-emerald-400 hover:bg-slate-800"
+            >
+              Fotos da Loja & Equipe
             </button>
             <button
               onClick={() => handleNavClick('diferenca')}

@@ -3,6 +3,7 @@ import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { QuoteForm } from './components/QuoteForm';
 import { EngineShowcase } from './components/EngineShowcase';
+import { StoreShowcase } from './components/StoreShowcase';
 import { AboutSection } from './components/AboutSection';
 import { DeliveryAndPayment } from './components/DeliveryAndPayment';
 import { ContactSection } from './components/ContactSection';
@@ -14,7 +15,6 @@ import { siteConfig } from './config/siteConfig';
 import { X } from 'lucide-react';
 
 export default function App() {
-  const [prefilledEngineType, setPrefilledEngineType] = useState<string>('Motor Completo (Fechado)');
   const [legalModalTab, setLegalModalTab] = useState<'privacidade' | 'trocas' | 'termos' | null>(null);
 
   const handleScrollToForm = () => {
@@ -35,13 +35,15 @@ export default function App() {
     }
   };
 
-  const handleSelectEngineForQuote = (engineType: string) => {
-    setPrefilledEngineType(engineType);
+  const [prefilledMotorQuery, setPrefilledMotorQuery] = useState<string>('');
+
+  const handleSelectEngineForQuote = (engineTitle: string) => {
+    setPrefilledMotorQuery(engineTitle);
     handleScrollToForm();
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50 text-slate-800 antialiased selection:bg-blue-900 selection:text-white">
+    <div className="min-h-screen flex flex-col bg-slate-50 text-slate-800 antialiased selection:bg-blue-900 selection:text-white w-full overflow-x-hidden">
       
       {/* Top Navigation */}
       <Navbar
@@ -50,7 +52,7 @@ export default function App() {
       />
 
       {/* Main High-Conversion Engines Page */}
-      <main className="flex-1">
+      <main className="flex-1 w-full overflow-x-hidden">
         
         {/* Hero Section */}
         <Hero
@@ -63,7 +65,7 @@ export default function App() {
         <QuoteForm
           displayName={siteConfig.company.displayName}
           whatsappNumber={siteConfig.company.contact.whatsappRaw}
-          prefilledEngineType={prefilledEngineType}
+          prefilledMotorQuery={prefilledMotorQuery}
         />
 
         {/* Engine Catalog & Educational Visual Showcase */}
@@ -71,6 +73,9 @@ export default function App() {
           displayName={siteConfig.company.displayName}
           onSelectEngineForQuote={handleSelectEngineForQuote}
         />
+
+        {/* Real Store, Team & Warehouse Gallery with WhatsApp CTAs */}
+        <StoreShowcase />
 
         {/* About & Corporate Credibility */}
         <AboutSection />

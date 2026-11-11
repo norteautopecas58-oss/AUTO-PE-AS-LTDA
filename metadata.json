@@ -1,0 +1,6 @@
+{
+  "name": "AUTO PEÇAS LTDA — Motores Automotivos",
+  "description": "Especialistas em motores automotivos completos, parciais e cabeçotes com Nota Fiscal e garantia. Consulte a disponibilidade do motor para o seu carro pelo WhatsApp.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

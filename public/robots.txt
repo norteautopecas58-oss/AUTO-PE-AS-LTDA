@@ -1,0 +1,15 @@
+# Robots.txt — AUTO PEÇAS LTDA
+# Permite rastreamento completo das páginas de destino para aprovação de campanhas do Google Ads
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /config/
+
+# Google Ads Bot
+User-agent: AdsBot-Google
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+Sitemap: https://autopecasltda.com/sitemap.xml

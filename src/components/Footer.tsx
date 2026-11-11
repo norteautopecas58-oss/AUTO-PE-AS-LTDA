@@ -25,11 +25,15 @@ export const Footer: React.FC<FooterProps> = ({
           
           {/* Column 1 & 2: Brand & Corporate CNPJ Identification */}
           <div className="lg:col-span-2 space-y-4">
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-3">
+              <img
+                src="/logo.png"
+                alt="Logo AUTO PEÇAS LTDA"
+                className="w-12 h-12 rounded-full object-contain bg-slate-900 border border-slate-700 shadow-md shrink-0"
+              />
               <span className="text-xl font-extrabold text-white tracking-tight">
                 {siteConfig.company.displayName}
               </span>
-              <span className="w-2 h-2 rounded-full bg-red-600" />
             </div>
 
             <p className="text-xs text-slate-400 leading-relaxed pr-4">

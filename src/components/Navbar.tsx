@@ -31,12 +31,17 @@ export const Navbar: React.FC<NavbarProps> = ({
     <header className="sticky top-0 z-50 bg-slate-900 text-white border-b border-slate-800 shadow-md">
       <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-18 flex items-center justify-between gap-2 sm:gap-8 w-full">
         
-        {/* Zone 1: Clean Brand Name */}
+        {/* Zone 1: Clean Brand Name with Circular Logo */}
         <button
           onClick={() => handleNavClick('topo')}
-          className="text-left group flex items-center gap-1.5 sm:gap-2 cursor-pointer focus:outline-none shrink-0"
+          className="text-left group flex items-center gap-2.5 sm:gap-3 cursor-pointer focus:outline-none shrink-0"
           title="Página Inicial"
         >
+          <img
+            src="/logo.png"
+            alt="Logo Circular AUTO PEÇAS LTDA"
+            className="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-contain bg-slate-900 border border-slate-700 shadow-md shrink-0"
+          />
           <div className="flex flex-col">
             <span className="text-lg sm:text-2xl font-extrabold tracking-tight text-white group-hover:text-blue-400 transition-colors whitespace-nowrap">
               {siteConfig.company.displayName}
@@ -45,7 +50,6 @@ export const Navbar: React.FC<NavbarProps> = ({
               Motores Automotivos & Parciais
             </span>
           </div>
-          <span className="w-2 h-2 rounded-full bg-red-600 shrink-0" aria-hidden="true" />
         </button>
 
         {/* Zone 2: Navigation Links */}

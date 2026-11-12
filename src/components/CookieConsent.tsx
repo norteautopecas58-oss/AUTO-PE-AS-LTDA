@@ -90,7 +90,7 @@ export const CookieConsent: React.FC = () => {
             </button>
             <button
               onClick={handleAcceptAll}
-              className="px-3 py-1.5 text-white bg-blue-600 hover:bg-blue-500 font-semibold rounded-lg transition-colors cursor-pointer"
+              className="px-3 py-1.5 text-white bg-red-600 hover:bg-red-500 font-bold rounded-lg transition-colors cursor-pointer"
             >
               Aceitar todos
             </button>

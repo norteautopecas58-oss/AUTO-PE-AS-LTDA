@@ -1,98 +1,101 @@
 import React from 'react';
-import { MessageCircle, MapPin, Users, Wrench, ShieldCheck, Warehouse } from 'lucide-react';
+import { WhatsAppIcon } from './WhatsAppIcon';
 import { openWhatsAppDirect } from '../utils/whatsapp';
+import { ShieldCheck, Sparkles, CheckCircle2 } from 'lucide-react';
+import { siteConfig } from '../config/siteConfig';
 
-interface StorePhotoItem {
+interface MotorPhotoItem {
   id: string;
   image: string;
   title: string;
-  description: string;
-  buttonText: string;
-  whatsappMessage: string;
+  category: 'novo' | 'seminovo';
   badge: string;
+  description: string;
+  whatsappMessage: string;
 }
 
-const STORE_PHOTOS: StorePhotoItem[] = [
+const MOTOR_PHOTOS: MotorPhotoItem[] = [
   {
-    id: 'fachada',
-    image: '/assets/aistudio/Fachada_da_Auto_Pe_as_Ltda-1_9a51a879.png',
-    title: 'Fachada Oficial e Loja Física',
+    id: 'montagem-novos',
+    image: '/assets/aistudio/imgi_169_images_385520f2.png',
+    title: 'Montagem Técnica & Revisão de Motores Novos',
+    category: 'novo',
+    badge: 'MOTOR NOVO · 1 ANO DE GARANTIA',
     description:
-      'Sede própria localizada na Avenida Juntas Provisórias, 527 — Ipiranga, São Paulo/SP. Loja estabelecida com fácil acesso para retirada presencial de motores e componentes.',
-    buttonText: 'Falar com a Loja Física no WhatsApp',
-    whatsappMessage: 'Olá! Gostaria de falar com o atendimento da AUTO PEÇAS LTDA sobre a disponibilidade de um motor.',
-    badge: 'Loja Física em SP',
+      'Motores novos parciais e completos montados com componentes de altíssima precisão. Testados em bancada para assegurar máxima compressão e durabilidade.',
+    whatsappMessage: 'Olá! Gostaria de consultar a disponibilidade de um motor novo com 1 ano de garantia na AUTO MOTORES LTDA.',
   },
   {
-    id: 'equipe',
-    image: '/assets/aistudio/Equipe_do_Auto_Pe_as_no_Balc_o-4_1a90b70a.png',
-    title: 'Equipe Especializada de Atendimento',
+    id: 'linha-montagem',
+    image: '/assets/aistudio/imgi_195_images_897014a4.png',
+    title: 'Linha de Motores Novos com Içamento Técnico',
+    category: 'novo',
+    badge: 'MOTOR NOVO · 1 ANO DE GARANTIA',
     description:
-      'Nossos consultores técnicos possuem vasta experiência em motorização automotiva, prontos para orientar sobre compatibilidade por chassi, bloco e ano.',
-    buttonText: 'Falar com Consultor no WhatsApp',
-    whatsappMessage: 'Olá! Gostaria de falar com um atendente técnico da AUTO PEÇAS LTDA para tirar dúvidas sobre um motor.',
-    badge: 'Atendimento Técnico',
+      'Setor de preparação e encaixe de motores com equipamentos dedicados. Cada motor passa por rigorosa checagem antes de ser liberado com garantia e nota.',
+    whatsappMessage: 'Olá! Gostaria de falar com o atendimento da AUTO MOTORES LTDA sobre cotação de motor novo.',
   },
   {
-    id: 'motores',
-    image: '/assets/aistudio/Motores_em_Exposi__o_na_Oficina-3_74da9153.png',
-    title: 'Motores em Exposição e Estoque',
+    id: 'blocos-cabecotes',
+    image: '/assets/aistudio/imgi_193_images_0ab2a8b0.png',
+    title: 'Blocos e Cabeçotes Novos de Precisão',
+    category: 'novo',
+    badge: 'MOTOR NOVO · 1 ANO DE GARANTIA',
     description:
-      'Motores automotivos inspecionados com procedência legal, teste de estanqueidade e Nota Fiscal Eletrônica emitida para regularização veicular no Detran.',
-    buttonText: 'Consultar Motores no WhatsApp',
-    whatsappMessage: 'Olá! Gostaria de consultar um motor em estoque com Nota Fiscal e garantia na AUTO PEÇAS LTDA.',
-    badge: 'Pronta Entrega',
+      'Blocos usinados e cabeçotes novos prontos para montagem rápida. Ideal para quem procura reposição confiável e economia sem abrir mão da garantia.',
+    whatsappMessage: 'Olá! Gostaria de consultar preços de bloco e motor novo na AUTO MOTORES LTDA.',
   },
   {
-    id: 'balcao',
-    image: '/assets/aistudio/Balc_o_de_Autope_as_Bem_Abastecido-2_e6c3253f.png',
-    title: 'Balcão de Atendimento e Consulta',
+    id: 'prateleiras-estoque',
+    image: '/assets/aistudio/imgi_27_images_5e861c24.png',
+    title: 'Estoque Estruturado de Motores e Componentes',
+    category: 'seminovo',
+    badge: 'SEMINOVO REVISADO · 6 MESES DE GARANTIA',
     description:
-      'Estrutura ágil com catálogo eletrônico e conferência imediata de peças para linha leve, utilitários, picapes e vans.',
-    buttonText: 'Chamar no Balcão pelo WhatsApp',
-    whatsappMessage: 'Olá! Gostaria de consultar preço e disponibilidade de um motor diretamente pelo balcão da AUTO PEÇAS LTDA.',
-    badge: 'Balcão de Atendimento',
+      'Grande estoque organizado em prateleiras reforçadas com motores seminovos revisados e catalogados para pronta entrega ou envio rápido.',
+    whatsappMessage: 'Olá! Gostaria de consultar um motor seminovo revisado com 6 meses de garantia na AUTO MOTORES LTDA.',
   },
   {
-    id: 'estoque',
-    image: '/assets/aistudio/Corredor_de_Pe_as_Automotivas_no_Estoque-5_953d36b3.png',
-    title: 'Estoque Organizado e Setor de Motores',
+    id: 'patio-seminovos',
+    image: '/assets/aistudio/imgi_175_images_2a710a12.png',
+    title: 'Pátio com Amplo Estoque de Motores Seminovos',
+    category: 'seminovo',
+    badge: 'SEMINOVO REVISADO · 6 MESES DE GARANTIA',
     description:
-      'Galpão com motores montados em paletes reforçados, prontos para despacho seguro via transportadora com seguro ou retirada no balcão.',
-    buttonText: 'Consultar Envio ou Retirada no WhatsApp',
-    whatsappMessage: 'Olá! Gostaria de consultar prazos de envio ou retirada presencial de um motor na AUTO PEÇAS LTDA.',
-    badge: 'Estoque e Envio',
+      'Variedade imensa de motores automotivos seminovos inspecionados, paletizados e protegidos, prontos para despacho com procedência legal e nota.',
+    whatsappMessage: 'Olá! Gostaria de consultar a disponibilidade de um motor seminovo em estoque na AUTO MOTORES LTDA.',
   },
 ];
 
 export const StoreShowcase: React.FC = () => {
   return (
-    <section id="nossa-loja" className="py-12 lg:py-20 bg-slate-50 border-b border-slate-200">
+    <section id="nossa-loja" className="py-12 lg:py-20 bg-black border-b border-zinc-800 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto">
-          <div className="text-xs font-bold uppercase tracking-wider text-red-600 mb-2">
-            Estrutura Física & Equipe
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-950 border border-red-600/50 text-red-400 text-xs font-black uppercase tracking-wider mb-3">
+            <Sparkles className="w-3.5 h-3.5 text-red-500" />
+            <span>Estoque Real & Oficina Especializada</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight">
-            Conheça a AUTO PEÇAS LTDA
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">
+            Temos Motores <span className="text-red-500">Novos</span> e <span className="text-red-500">Seminovos</span>
           </h2>
-          <p className="mt-3 text-slate-600 text-sm sm:text-base leading-relaxed">
-            Veja imagens reais da nossa loja física, balcão de atendimento, equipe especializada e estoque de motores em São Paulo.
+          <p className="mt-3 text-zinc-300 text-sm sm:text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
+            Quer encontrar o motor que precisa? Fale conosco! Orçamento sem compromisso em poucos minutos diretamente pelo WhatsApp.
           </p>
         </div>
 
-        {/* Gallery Grid */}
+        {/* Grid de Fotos Reais de Motores e Oficina */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {STORE_PHOTOS.map((item) => (
+          {MOTOR_PHOTOS.map((item) => (
             <div
               key={item.id}
-              className="bg-white rounded-2xl border border-slate-200/90 overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col justify-between group"
+              className="bg-zinc-900 rounded-3xl border-2 border-zinc-800 hover:border-red-600/80 overflow-hidden shadow-xl shadow-black/80 hover:shadow-red-950/30 transition-all flex flex-col justify-between group"
             >
               <div>
-                {/* Image Container */}
-                <div className="relative h-64 sm:h-72 overflow-hidden bg-slate-900">
+                {/* Imagem do Motor / Oficina */}
+                <div className="relative h-64 sm:h-72 overflow-hidden bg-black">
                   <img
                     src={item.image}
                     alt={item.title}
@@ -100,33 +103,43 @@ export const StoreShowcase: React.FC = () => {
                     loading="lazy"
                     referrerPolicy="no-referrer"
                   />
+                  {/* Badge de Garantia */}
                   <div className="absolute top-3 left-3">
-                    <span className="px-3 py-1 bg-slate-900/90 text-white text-[11px] font-bold tracking-wide rounded-md shadow border border-slate-700">
+                    <span className={`px-3 py-1 text-[11px] font-black tracking-wider uppercase rounded-lg shadow-lg border ${
+                      item.category === 'novo'
+                        ? 'bg-red-600 text-white border-red-400'
+                        : 'bg-zinc-900/95 text-emerald-400 border-emerald-500/50'
+                    }`}>
                       {item.badge}
                     </span>
                   </div>
                 </div>
 
-                {/* Content */}
+                {/* Conteúdo do Card */}
                 <div className="p-6 space-y-3">
-                  <h3 className="text-lg sm:text-xl font-bold text-slate-900 tracking-tight">
+                  <h3 className="text-lg sm:text-xl font-black text-white tracking-tight leading-snug group-hover:text-red-400 transition-colors">
                     {item.title}
                   </h3>
-                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed">
                     {item.description}
                   </p>
+                  
+                  <div className="pt-1 flex items-center gap-2 text-xs text-zinc-300 font-semibold">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                    <span>Emitimos garantia e nota</span>
+                  </div>
                 </div>
               </div>
 
-              {/* Action Button: WhatsApp */}
+              {/* Botão de WhatsApp em Verde com Logo Oficial */}
               <div className="p-6 pt-0">
                 <button
                   type="button"
-                  onClick={() => openWhatsAppDirect(item.whatsappMessage, `store_photo_${item.id}`)}
-                  className="w-full flex items-center justify-center gap-2.5 px-4 py-3 text-xs sm:text-sm font-bold text-white bg-emerald-600 hover:bg-emerald-500 active:bg-emerald-700 rounded-xl shadow transition-colors cursor-pointer active:scale-99"
+                  onClick={() => openWhatsAppDirect(item.whatsappMessage, `motor_photo_${item.id}`)}
+                  className="w-full flex items-center justify-center gap-2.5 px-4 py-3.5 text-xs sm:text-sm font-black text-white bg-emerald-600 hover:bg-emerald-500 active:bg-emerald-700 rounded-xl shadow-lg shadow-emerald-600/30 hover:shadow-emerald-500/40 transition-all cursor-pointer ring-2 ring-emerald-500/30 active:scale-98"
                 >
-                  <MessageCircle className="w-4 h-4 fill-current shrink-0" />
-                  <span>{item.buttonText}</span>
+                  <WhatsAppIcon className="w-5 h-5 shrink-0 fill-current" />
+                  <span>Consulte Disponibilidade no WhatsApp</span>
                 </button>
               </div>
 
@@ -134,23 +147,27 @@ export const StoreShowcase: React.FC = () => {
           ))}
         </div>
 
-        {/* Bottom Banner */}
-        <div className="bg-slate-900 text-white rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-md">
-          <div className="space-y-1 text-center sm:text-left">
-            <h4 className="text-lg font-bold text-white">
-              Quer visitar nossa loja ou retirar seu motor pessoalmente?
+        {/* Banner de Chamada Rápida: Quer encontrar seu motor? */}
+        <div className="bg-gradient-to-r from-red-950 via-zinc-900 to-black border-2 border-red-600/70 rounded-3xl p-6 sm:p-10 flex flex-col lg:flex-row items-center justify-between gap-6 shadow-2xl shadow-red-950/50">
+          <div className="space-y-2 text-center lg:text-left">
+            <span className="px-3 py-1 rounded-full bg-red-600 text-white text-xs font-black uppercase tracking-wider inline-block">
+              Atendimento Imediato
+            </span>
+            <h4 className="text-2xl sm:text-3xl font-black text-white">
+              Quer encontrar o motor que precisa? Fale conosco!
             </h4>
-            <p className="text-xs sm:text-sm text-slate-300">
-              Estamos na Avenida Juntas Provisórias, 527 — Ipiranga, São Paulo/SP. Fale conosco no WhatsApp antes de vir para separar seu motor.
+            <p className="text-sm text-zinc-300 max-w-xl">
+              Nossa equipe consulta o estoque na hora, verifica a aplicação exata para o seu carro e passa o orçamento sem compromisso em poucos minutos.
             </p>
           </div>
+
           <button
             type="button"
-            onClick={() => openWhatsAppDirect('Olá! Gostaria de agendar uma visita ou confirmar retirada de um motor na loja da AUTO PEÇAS LTDA.')}
-            className="inline-flex items-center gap-2 px-6 py-3.5 text-sm font-bold text-white bg-emerald-600 hover:bg-emerald-500 rounded-xl shadow transition-colors cursor-pointer whitespace-nowrap shrink-0"
+            onClick={() => openWhatsAppDirect('Olá! Gostaria de consultar um motor para o meu carro. Preciso de um orçamento rápido na AUTO MOTORES LTDA.')}
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4.5 text-base sm:text-lg font-black text-white bg-emerald-600 hover:bg-emerald-500 active:bg-emerald-700 rounded-2xl shadow-xl shadow-emerald-600/35 hover:shadow-emerald-500/45 transition-all cursor-pointer whitespace-nowrap shrink-0 ring-4 ring-emerald-500/30 active:scale-98"
           >
-            <MessageCircle className="w-4 h-4 fill-current" />
-            <span>Falar no WhatsApp da Loja</span>
+            <WhatsAppIcon className="w-6 h-6 shrink-0 fill-current" />
+            <span>Falar Agora no WhatsApp</span>
           </button>
         </div>
 

@@ -55,19 +55,19 @@ export interface SiteConfiguration {
 
 export const siteConfig: SiteConfiguration = {
   company: {
-    displayName: 'AUTO PEÇAS LTDA',
-    tradeNameReceipt: 'AUTOPECAS PERIM',
+    displayName: 'AUTO MOTORES LTDA',
+    tradeNameReceipt: 'AUTO MOTORES LTDA',
     legalName: 'PERIM COMERCIO ATACADISTA E VAREJISTA DE AUTO PECAS LTDA',
     cnpj: '51.195.790/0001-49',
-    stateRegistration: 'Inscrição Estadual ativa no Estado de São Paulo',
+    stateRegistration: 'Inscrição Estadual ativa e regular',
     address: {
-      street: 'Avenida Juntas Provisórias',
-      number: '527',
-      neighborhood: 'Ipiranga',
-      city: 'São Paulo',
-      state: 'SP',
-      cep: '04214-050',
-      fullFormatted: 'Avenida Juntas Provisórias, 527 — Ipiranga, São Paulo - SP, CEP: 04214-050',
+      street: '',
+      number: '',
+      neighborhood: '',
+      city: '',
+      state: '',
+      cep: '',
+      fullFormatted: '',
     },
     contact: {
       phone: '(11) 99243-4631',
@@ -80,7 +80,7 @@ export const siteConfig: SiteConfiguration = {
       weekdays: 'Segunda a Sexta: 08:00 às 18:00',
       saturday: 'Sábado: 08:00 às 13:00',
       sundayAndHolidays: 'Domingos e Feriados: Fechado',
-      note: 'Atendimento comercial via WhatsApp e balcão presencial no Ipiranga - SP.',
+      note: 'Atendimento comercial via WhatsApp e canais digitais com envio para todo o Brasil.',
     },
   },
   hero: {

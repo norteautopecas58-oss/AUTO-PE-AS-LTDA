@@ -18,33 +18,33 @@ export const LegalPoliciesView: React.FC<LegalPoliciesViewProps> = ({
   const cfg = overrideConfig || siteConfig;
 
   return (
-    <section id="politicas" className="py-12 lg:py-20 bg-slate-50 border-b border-slate-200">
+    <section id="politicas" className="py-12 lg:py-20 bg-zinc-950 border-b border-zinc-800 text-white">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-10">
-          <div className="text-xs font-bold uppercase tracking-wider text-blue-900 mb-2">
+          <div className="text-xs font-bold uppercase tracking-wider text-red-500 mb-2">
             Transparência & Conformidade Legal
           </div>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight">
             Políticas e Termos Oficiais
           </h2>
-          <p className="mt-3 text-slate-600 text-sm sm:text-base leading-relaxed">
+          <p className="mt-3 text-zinc-300 text-sm sm:text-base leading-relaxed">
             Consulte nossas diretrizes de privacidade (LGPD), termos de atendimento e a política de trocas e garantias fundamentada no Código de Defesa do Consumidor.
           </p>
         </div>
 
         {/* Tab Controls (Functional buttons with active states) */}
-        <div className="flex flex-wrap items-center justify-center gap-2 p-1.5 bg-slate-200/80 rounded-xl max-w-xl mx-auto mb-10">
+        <div className="flex flex-wrap items-center justify-center gap-2 p-1.5 bg-zinc-900 border border-zinc-800 rounded-xl max-w-xl mx-auto mb-10">
           <button
             onClick={() => setActiveTab('privacidade')}
             className={`flex-1 min-w-[140px] flex items-center justify-center gap-2 px-4 py-2.5 text-xs sm:text-sm font-semibold rounded-lg transition-all cursor-pointer ${
               activeTab === 'privacidade'
-                ? 'bg-white text-slate-900 shadow-sm'
-                : 'text-slate-600 hover:text-slate-900'
+                ? 'bg-red-600 text-white shadow-sm font-bold'
+                : 'text-zinc-400 hover:text-white'
             }`}
           >
-            <ShieldCheck className="w-4 h-4 text-blue-900" />
+            <ShieldCheck className="w-4 h-4 text-white" />
             <span>Política de Privacidade</span>
           </button>
 
@@ -52,11 +52,11 @@ export const LegalPoliciesView: React.FC<LegalPoliciesViewProps> = ({
             onClick={() => setActiveTab('trocas')}
             className={`flex-1 min-w-[140px] flex items-center justify-center gap-2 px-4 py-2.5 text-xs sm:text-sm font-semibold rounded-lg transition-all cursor-pointer ${
               activeTab === 'trocas'
-                ? 'bg-white text-slate-900 shadow-sm'
-                : 'text-slate-600 hover:text-slate-900'
+                ? 'bg-red-600 text-white shadow-sm font-bold'
+                : 'text-zinc-400 hover:text-white'
             }`}
           >
-            <RotateCcw className="w-4 h-4 text-red-600" />
+            <RotateCcw className="w-4 h-4 text-white" />
             <span>Trocas e Devoluções</span>
           </button>
 
@@ -64,17 +64,17 @@ export const LegalPoliciesView: React.FC<LegalPoliciesViewProps> = ({
             onClick={() => setActiveTab('termos')}
             className={`flex-1 min-w-[140px] flex items-center justify-center gap-2 px-4 py-2.5 text-xs sm:text-sm font-semibold rounded-lg transition-all cursor-pointer ${
               activeTab === 'termos'
-                ? 'bg-white text-slate-900 shadow-sm'
-                : 'text-slate-600 hover:text-slate-900'
+                ? 'bg-red-600 text-white shadow-sm font-bold'
+                : 'text-zinc-400 hover:text-white'
             }`}
           >
-            <FileText className="w-4 h-4 text-slate-800" />
+            <FileText className="w-4 h-4 text-white" />
             <span>Termos de Uso</span>
           </button>
         </div>
 
         {/* Content Container */}
-        <div className="bg-white rounded-2xl border border-slate-200 p-6 sm:p-10 shadow-sm prose-slate max-w-none text-slate-700 leading-relaxed text-sm sm:text-base">
+        <div className="bg-zinc-900 rounded-3xl border border-zinc-800 p-6 sm:p-10 shadow-xl text-zinc-300 leading-relaxed text-sm sm:text-base">
           
           {/* TAB 1: POLÍTICA DE PRIVACIDADE */}
           {activeTab === 'privacidade' && (
@@ -101,7 +101,7 @@ export const LegalPoliciesView: React.FC<LegalPoliciesViewProps> = ({
                   <p><strong>Razão Social Informada:</strong> {cfg.company.legalName}</p>
                   <p><strong>Nome Fantasia no Cadastro:</strong> {cfg.company.tradeNameReceipt}</p>
                   <p><strong>CNPJ:</strong> {cfg.company.cnpj}</p>
-                  <p><strong>Endereço:</strong> {cfg.company.address.fullFormatted}</p>
+                  <p><strong>Canal de Atendimento Oficial:</strong> WhatsApp {cfg.company.contact.whatsapp}</p>
                   <p><strong>Canal do Encarregado / DPO:</strong> {cfg.company.contact.email}</p>
                 </div>
               </div>

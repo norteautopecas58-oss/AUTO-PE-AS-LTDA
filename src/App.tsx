@@ -43,7 +43,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50 text-slate-800 antialiased selection:bg-blue-900 selection:text-white w-full overflow-x-hidden">
+    <div className="min-h-screen flex flex-col bg-zinc-950 text-zinc-100 antialiased selection:bg-red-600 selection:text-white w-full overflow-x-hidden">
       
       {/* Top Navigation */}
       <Navbar

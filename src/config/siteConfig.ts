@@ -70,10 +70,10 @@ export const siteConfig: SiteConfiguration = {
       fullFormatted: '',
     },
     contact: {
-      phone: '(11) 99243-4631',
-      phoneRaw: '11992434631',
-      whatsapp: '(11) 99243-4631',
-      whatsappRaw: '5511992434631',
+      phone: '(47) 2018-2036',
+      phoneRaw: '4720182036',
+      whatsapp: '(47) 2018-2036',
+      whatsappRaw: '554720182036',
       email: 'contato@autopecasltda.com',
     },
     businessHours: {

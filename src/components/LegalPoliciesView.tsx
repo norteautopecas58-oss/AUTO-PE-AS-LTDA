@@ -205,7 +205,7 @@ export const LegalPoliciesView: React.FC<LegalPoliciesViewProps> = ({
                   Para iniciar um procedimento de troca ou análise técnica de garantia:
                 </p>
                 <ol className="list-decimal list-inside space-y-1.5 text-slate-700 text-sm">
-                  <li>Entre em contato pelo WhatsApp oficial <strong>(11) 99243-4631</strong> ou e-mail <strong>{cfg.company.contact.email}</strong>.</li>
+                  <li>Entre em contato pelo WhatsApp oficial <strong>{cfg.company.contact.whatsapp}</strong> ou e-mail <strong>{cfg.company.contact.email}</strong>.</li>
                   <li>Envie o número da Nota Fiscal emitida e fotos claras da peça e da etiqueta da embalagem.</li>
                   <li>Descreva detalhadamente o motivo da solicitação ou eventual anomalia identificada pela oficina mecânica.</li>
                 </ol>

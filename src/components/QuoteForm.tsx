@@ -10,7 +10,7 @@ interface QuoteFormProps {
 }
 
 export const QuoteForm: React.FC<QuoteFormProps> = ({
-  whatsappNumber = '5511992434631',
+  whatsappNumber = '554720182036',
   prefilledMotorQuery = '',
 }) => {
   const [motorQuery, setMotorQuery] = useState(prefilledMotorQuery);
